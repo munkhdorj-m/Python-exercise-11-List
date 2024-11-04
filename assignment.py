@@ -1,12 +1,16 @@
 # You can remove 'pass' if you written code in the function 
 
 # Exercise 1
-def print_pattern_1(n):
+def find_average(numbers):
     # Write your code here
     pass
 
 # Exercise 2
-def print_pattern_2(n):
+def multiply_elements(numbers):
     # Write your code here
     pass
 
+# Exercise 3
+def find_smallest(numbers):
+    # Write your code here
+    pass
