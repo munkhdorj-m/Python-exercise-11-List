@@ -1,110 +1,40 @@
 import pytest
 import inspect
-from assignment import print_pattern_1, print_pattern_2
+from assignment import find_average, multiply_elements, find_smallest
 
 def check_contains_loop(function):
     source = inspect.getsource(function)
     return 'for' in source or 'while' in source
-    
-@pytest.mark.parametrize("n, expected1, expected2, expected3", [
-    (3, (
-        "1 2 3 \n"
-        "4 5 6 \n"
-        "7 8 9 \n"
-    ),(
-        "1  2  3 \n"
-        "4  5  6 \n"
-        "7  8  9 \n"
-    ),(
-        " 1  2  3 \n"
-        " 4  5  6 \n"
-        " 7  8  9 \n"
-    )),
-    (5, (
-        "1 2 3 4 5 \n"
-        "6 7 8 9 10 \n"
-        "11 12 13 14 15 \n"
-        "16 17 18 19 20 \n"
-        "21 22 23 24 25 \n"
-    ),(
-        " 1  2  3  4  5 \n"
-        " 6  7  8  9 10 \n"
-        "11 12 13 14 15 \n"
-        "16 17 18 19 20 \n"
-        "21 22 23 24 25 \n"
-    ),(
-        "1 2 3 4 5\n"
-        "6 7 8 9 10\n"
-        "11 12 13 14 15\n"
-        "16 17 18 19 20\n"
-        "21 22 23 24 25\n"
-    )),
+
+@pytest.mark.parametrize("numbers, expected", [
+    ([1, 2, 3, 4, 5], 3.0),
+    ([10, 20, 30], 20.0),
+    ([7], 7.0),
+    ([2, 4, 6, 8, 10], 6.0),
+    ([0, 0, 0], 0.0)
 ])
-def test1(capsys, n, expected1, expected2, expected3):
-    print_pattern_1(n)
-    captured = capsys.readouterr()
-    assert captured.out == expected1 or captured.out == expected2 or captured.out == expected3 
-    assert check_contains_loop(print_pattern_1)
+def test1(numbers, expected):
+    assert find_average(numbers) == expected
+    assert check_contains_loop(find_average)
 
-
-@pytest.mark.parametrize("n, expected1, expected2", [
-    (1, (
-        "1 \n"
-    ),(
-        "1\n"
-    )),
-    (2, (
-        "2 2 \n"
-        "2 2 \n"
-    ),(
-        "22\n"
-        "22\n"
-    )),
-    (3, (
-        "3 3 3 \n"
-        "3 * 3 \n"
-        "3 3 3 \n"
-    ),(
-        "333\n"
-        "3*3\n"
-        "333\n"
-    )),
-    (4, (
-        "4 4 4 4 \n"
-        "4 * * 4 \n"
-        "4 * * 4 \n"
-        "4 4 4 4 \n"
-    ),(
-        "4444\n"
-        "4**4\n"
-        "4**4\n"
-        "4444\n"
-    )),
-    (9, (
-        "9 9 9 9 9 9 9 9 9 \n"
-        "9 * * * * * * * 9 \n"
-        "9 * * * * * * * 9 \n"
-        "9 * * * * * * * 9 \n"
-        "9 * * * * * * * 9 \n"
-        "9 * * * * * * * 9 \n"
-        "9 * * * * * * * 9 \n"
-        "9 * * * * * * * 9 \n"
-        "9 9 9 9 9 9 9 9 9 \n"
-    ),(
-        "999999999\n"
-        "9*******9\n"
-        "9*******9\n"
-        "9*******9\n"
-        "9*******9\n"
-        "9*******9\n"
-        "9*******9\n"
-        "9*******9\n"
-        "999999999\n"
-    )),
+@pytest.mark.parametrize("numbers, expected", [
+    ([1, 2, 3, 4], 24),
+    ([5, 5, 5, 5], 625),
+    ([10, 20], 200),
+    ([7], 7),
+    ([2, 3, -1], -6)
 ])
-def test2(capsys, n, expected1, expected2):
-    print_pattern_2(n)
-    captured = capsys.readouterr()
-    assert captured.out == expected1 or captured.out == expected2
-    assert check_contains_loop(print_pattern_2)
+def test2(numbers, expected):
+    assert multiply_elements(numbers) == expected
+    assert check_contains_loop(multiply_elements)
 
+@pytest.mark.parametrize("numbers, expected", [
+    ([1, 2, 3, 4, 5], 1),
+    ([10, 20, 5, 30], 5),
+    ([7, 7, 7, 7], 7),
+    ([2, -4, 6, 8], -4),
+    ([0, -1, -5, 3], -5)
+])
+def test3(numbers, expected):
+    assert find_smallest(numbers) == expected
+    assert check_contains_loop(find_smallest)
