@@ -1,7 +1,7 @@
-# Python NESTED LOOP 3
+# Python List
 
-Python Nested Loop PDF:
-https://drive.google.com/file/d/1RLtJoZs6p5zrJi6IZ79tS-NTlhFuO4vw/view?usp=sharing
+Python List PDF:
+https://drive.google.com/file/d/1lKmQwkQc8rGIuH9OIQB-yM6lFg-lW9Ch/view?usp=sharing
 
 
 ---
@@ -10,24 +10,18 @@ https://drive.google.com/file/d/1RLtJoZs6p5zrJi6IZ79tS-NTlhFuO4vw/view?usp=shari
 
 **Problem:**
 
-Print below pattern with given n:
+Find average of list elements.
 
 **Example:**
 
- 	Input: 3
-  	Output: 
-	1 2 3
- 	4 5 6
-  	7 8 9
+ 	Input: [4,2,5,2]
+  	Output: 3.25
       
- 	Input: 5
-  	Output: 
-	 1  2  3  4  5 
- 	 6  7  8  9 10
-  	11 12 13 14 15
-   	16 17 18 19 20 
-	21 22 23 24 25
+ 	Input: [5,5,5,5,5]
+  	Output: 5.0
 
+ 	Input: [9,1,23,2,3]
+  	Output: 7.6
 
 ---
 
@@ -35,42 +29,36 @@ Print below pattern with given n:
 
 **Problem:**
 
-Print below pattern with given n:
+Find multiply of list elements.
 
 **Example**
 
-	Input: 1
- 	Output:
-	1
+	Input: [1,2,3,4,5]
+ 	Output: 120
 
- 	Input: 2
- 	Output:
-	2 2
- 	2 2
+ 	Input: [2,9,5,6]
+ 	Output: 540
+  
+   	Input: [1,1,1,1,1]
+ 	Output: 1
 
-   	Input: 3
- 	Output:
-	3 3 3
- 	3 * 3
-  	3 3 3
+---
 
-	Input: 4
- 	Output:
-	4 4 4 4
- 	4 * * 4
-  	4 * * 4
-   	4 4 4 4
+## Exercise 3
 
-	Input: 9
- 	Output:
-	9 9 9 9 9 9 9 9 9 
- 	9 * * * * * * * 9 
-   	9 * * * * * * * 9 
-	9 * * * * * * * 9
-	9 * * * * * * * 9
-	9 * * * * * * * 9
-	9 * * * * * * * 9
-	9 * * * * * * * 9
-	9 9 9 9 9 9 9 9 9 
+**Problem:**
+
+Find smallest element in a list.
+
+**Example**
+
+	Input: [9,12,3,5,0]
+ 	Output: 0
+
+ 	Input: [-99,-12,-42,-55]
+ 	Output: -99
+  
+   	Input: [5,5,5,5]
+ 	Output: 5
 
 ---
